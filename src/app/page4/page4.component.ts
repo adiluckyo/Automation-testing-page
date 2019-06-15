@@ -12,7 +12,7 @@ export class Page4Component implements OnInit {
 
   clock = Number('0.0');
   time = 0.0;
-  check=true;
+  check = true;
   randomnumber: number;
   constructor(private router: Router, private transfereService: TransferService) { }
   timeoutID;
@@ -21,7 +21,7 @@ export class Page4Component implements OnInit {
   }
   slowAlert() {
     this.randomnumber = Math.floor((Math.random() * 1) * 100) / 100;
-    this.clock += this.randomnumber
+    this.clock += this.randomnumber;
   }
   clearAlert() {
     window.clearTimeout(this.timeoutID);
@@ -31,13 +31,13 @@ export class Page4Component implements OnInit {
   }
 
   checkText4() {
-    if(this.clock >= 20){
-      if(this.check){
-        this.transfereService.setData(4,this.clock);
+    if (this.clock >= 20) {
+      if (this.check) {
+        this.transfereService.setData(4, this.clock);
         this.check = false;
       }
       this.router.navigate(['/page5']);
-    }else {
+    } else {
       alert('try again');
     }
 
