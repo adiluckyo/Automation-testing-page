@@ -1,0 +1,7 @@
+<button id="home" class="btn btn-primary" routerLink="/">Home</button> <br>
+<h2>Step 1 : please input  text</h2>
+Please input your username in below box<br>
+and click next to go to the next step<br><br>
+
+<input type="text" id="input" [(ngModel)]="textbox">
+<button id="Start" (click)="checkEmpty()"  >Next page</button>
