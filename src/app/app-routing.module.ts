@@ -10,6 +10,22 @@ const routes: Routes = [{
   loadChildren: () => import('./page2/page2.module').then(mod => mod.Page2Module)
 },
 {
+  path: 'page3',
+  loadChildren: () => import('./page3/page3.module').then(mod => mod.Page3Module)
+},
+{
+  path: 'page4',
+  loadChildren: () => import('./page4/page4.module').then(mod => mod.Page4Module)
+},
+{
+  path: 'page5',
+  loadChildren: () => import('./page2/page2.module').then(mod => mod.Page2Module)
+},
+{
+  path: 'page6',
+  loadChildren: () => import('./page2/page2.module').then(mod => mod.Page2Module)
+},
+{
   path: '',
   redirectTo: '',
   pathMatch: 'full'

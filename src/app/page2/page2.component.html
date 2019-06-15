@@ -1,5 +1,7 @@
-<ul class="heroes">
-    <li *ngFor="let text of TextList">
-      <span class="badge"><h4>{{text.value}}</h4></span>
-    </li>
-  </ul>
+<h3>Step 2, Copy and past text</h3>
+<span class="badge">
+  <h4 id="text"><font color="red">{{randomText}}</font></h4>
+</span>
+<br> Please copy the above red text and click next, <br>
+then type that text into the prompt box. <br>
+<button id="Start" (click)="checkText()"  id="nextto3">Next step</button>
