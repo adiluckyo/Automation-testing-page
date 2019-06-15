@@ -17,7 +17,7 @@ export class Page4Component implements OnInit {
   constructor(private router: Router, private transfereService: TransferService) { }
   timeoutID;
   delayedAlert() {
-    this.timeoutID = window.setInterval(() => this.slowAlert(), 100);
+    this.timeoutID = window.setInterval(() => this.slowAlert(), 200);
   }
   slowAlert() {
     this.randomnumber = Math.floor((Math.random() * 1) * 100) / 100;
@@ -31,7 +31,7 @@ export class Page4Component implements OnInit {
   }
 
   checkText4() {
-    if (this.clock >= 20) {
+    if (this.clock >= 30) {
       if (this.check) {
         this.transfereService.setData(4, this.clock);
         this.check = false;

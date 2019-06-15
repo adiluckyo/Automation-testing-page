@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./page3.component.css']
 })
 export class Page3Component implements OnInit {
-  public number_text: number;
+  public numberText: number;
   randomText = '';
   SeletedValue = '';
   TextList: Text3[] = [
@@ -16,16 +16,16 @@ export class Page3Component implements OnInit {
     { value: 'I\'m an intern' },
     { value: 'I\'m an instructor' },
   ];
-  constructor(private router: Router,  private transfereService: TransferService) { }
+  constructor(private router: Router, private transfereService: TransferService) { }
 
   ngOnInit() {
     length = this.TextList.length;
-    this.number_text = Math.floor(Math.random() * length);
-    this.randomText = this.TextList[this.number_text].value;
+    this.numberText = Math.floor(Math.random() * length);
+    this.randomText = this.TextList[this.numberText].value;
   }
   checkText3() {
     if (this.randomText === this.SeletedValue) {
-      this.transfereService.setData(3,this.SeletedValue);
+      this.transfereService.setData(3, this.SeletedValue);
       this.router.navigate(['/page4']);
     } else {
       alert('Wrong answer, try again');
