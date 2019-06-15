@@ -1,3 +1,4 @@
+import { TransferService } from './../transfer.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
@@ -21,7 +22,7 @@ export class Page2Component implements OnInit {
   ];
 
 
-  constructor(private router: Router, private cdRef: ChangeDetectorRef) { }
+  constructor(private router: Router, private transferService: TransferService) { }
 
   ngOnInit() {
     length = this.TextList.length;
@@ -34,7 +35,7 @@ export class Page2Component implements OnInit {
     let text = prompt('Please enter the text');
     if (text != null && text !== '') {
       if (text === this.TextList[this.number_text].value) {
-        // alert("success");
+        this.transferService.setData(2,text);
         this.router.navigate(['/page3']);
       } else {
         alert('Wrong answer, try again');

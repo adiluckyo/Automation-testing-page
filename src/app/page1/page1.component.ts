@@ -1,5 +1,7 @@
+import { TransferService } from './../transfer.service';
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-page1',
   templateUrl: './page1.component.html',
@@ -7,9 +9,11 @@ import {Router} from '@angular/router';
 })
 export class Page1Component implements OnInit {
   textbox = '';
-  constructor(private router: Router){}
-
+  constructor(private router: Router, private transferService: TransferService){}
+  startTime ;
   ngOnInit() {
+    this.startTime = new Date();
+    this.transferService.setTime(this.startTime);
   }
 
   checkEmpty(){
@@ -17,6 +21,7 @@ export class Page1Component implements OnInit {
     if (this.textbox === '') {
       alert('please enter text');
     }else {
+      this.transferService.setData(1,this.textbox);
       this.router.navigate(['/page2']);
     }
   }

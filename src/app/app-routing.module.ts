@@ -19,11 +19,11 @@ const routes: Routes = [{
 },
 {
   path: 'page5',
-  loadChildren: () => import('./page2/page2.module').then(mod => mod.Page2Module)
+  loadChildren: () => import('./page5/page5.module').then(mod => mod.Page5Module)
 },
 {
   path: 'page6',
-  loadChildren: () => import('./page2/page2.module').then(mod => mod.Page2Module)
+  loadChildren: () => import('./page6/page6.module').then(mod => mod.Page6Module)
 },
 {
   path: '',

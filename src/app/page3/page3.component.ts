@@ -1,5 +1,7 @@
+import { TransferService } from './../transfer.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-page3',
   templateUrl: './page3.component.html',
@@ -14,7 +16,7 @@ export class Page3Component implements OnInit {
     { value: 'I\'m an intern' },
     { value: 'I\'m an instructor' },
   ];
-  constructor(private router: Router) { }
+  constructor(private router: Router,  private transfereService: TransferService) { }
 
   ngOnInit() {
     length = this.TextList.length;
@@ -23,6 +25,7 @@ export class Page3Component implements OnInit {
   }
   checkText3() {
     if (this.randomText === this.SeletedValue) {
+      this.transfereService.setData(3,this.SeletedValue);
       this.router.navigate(['/page4']);
     } else {
       alert('Wrong answer, try again');
