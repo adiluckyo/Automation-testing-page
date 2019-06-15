@@ -1,6 +1,6 @@
 <h3> Step 3, Selecte the value from dropdown list</h3> <br>
 <h5 id="text">Select dropdown option that its value is
-<font color="red">{{randomText}}</font> and click next to go to the next step</h5>
+<font color="red" name="Text">{{randomText}}</font> and click next to go to the next step</h5>
 <br><select id="dropdown" [(ngModel)]="SeletedValue" (change)="selected()">
   <option *ngFor="let text of TextList" [ngValue]="text.value">
     {{ text.value }}

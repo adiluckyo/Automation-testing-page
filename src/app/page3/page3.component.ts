@@ -20,7 +20,7 @@ export class Page3Component implements OnInit {
 
   ngOnInit() {
     length = this.TextList.length;
-    this.numberText = Math.floor(Math.random() * length);
+    this.numberText = 1;
     this.randomText = this.TextList[this.numberText].value;
   }
   checkText3() {
