@@ -1,7 +1,6 @@
 <h3>Step 5, Select the correct radio button</h3>
-<div >
-    <label *ngFor="let text of TextList">
-      <input id="{{text.id}}" value="{{text.value}}" type="radio"  [(ngModel)]="radioSelected" (change)=checkRadio(text)>
-      {{text.value}} <br>
-    </label>
+<div *ngFor="let text of TextList">
+  <label >
+    <input style="white-space: pre-line" id="{{text.id}}" value="{{text.value}}" type="radio" [(ngModel)]="radioSelected" (change)=checkRadio(text)> {{text.value}}
+  </label>
 </div>
